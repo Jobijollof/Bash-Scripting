@@ -86,7 +86,7 @@ We can now run the script again
 ### Variables
 Variables are temporary storage in the memory.
 
-Assign variables like in the example. Use the $ sign to call back your variable.
+Variables are assigned with the (=) sign and called back with the ($) sign and the variable name.
 
 Assignment of variables can be done on the terminal and in the text editor.
 
@@ -97,4 +97,65 @@ Assignment of variables can be done on the terminal and in the text editor.
 
 ![variable](./images/run-variables.png)
 
+### User Input
 
+We can also ask for user input that can set our variables using the following:
+
+```
+echo "Enter your name"
+read name
+echo hi $name
+```
+![name](./images/read%20-name.png)
+
+![hi](./images/hi-jobina.png)
+
+
+
+
+
+### Conditionals
+
+`if`
+`if-else`
+`else-if`
+These command will help us know for example, those participating in the challenge and how many days they have executed.
+These commands help the script in decision making. If something fails then the script can do something else. This is basically making the script smart.
+
+![conditionals](./images/conditional.png)
+
+- Kindly note that this is the format for the word in the square bracket [space-word-word-space]. If this is not done,the script will not run. 
+
+- If the script runs successfully, this should be your output 
+
+![if](./images/if-statement.png)
+
+It is clear from the above, that comparisons are being made. Values are being checked against the other. Kindly note the following commands.
+
+- `eq` - if the two values are equal will return TRUE
+- `ne` - if the two values are not equal will return TRUE
+- `gt` - if the first value is greater than the second value will return TRUE
+- `ge` - if the first value is greater than or equal to the second value will return TRUE
+- `lt` - if the first value is less than the second value will return TRUE
+- `le` - if the first value is less than or equal to the second value will return TRUE
+We might also use bash scripting to determine information about files and folders, this is known as file conditions.
+
+- `-d` file True if the file is a directory
+- `-e` file True if the file exists
+- `-f` file True if the provided string is a file
+- `-g` file True if the group id is set on a file
+- `-r` file True if the file is readable
+- `-s` file True if the file has a non-zero size
+
+```
+FILE="90DaysOfDevOps.txt"
+if [ -f "$FILE" ]
+then
+  echo "$FILE is a file"
+else
+  echo "$FILE is not a file"
+fi
+```
+![file](./images/file.png)
+
+![file1](./images/is-a-file.png)
