@@ -159,3 +159,64 @@ fi
 ![file](./images/file.png)
 
 ![file1](./images/is-a-file.png)
+
+
+### Command Line Arguments
+Example
+Scenario: We have our company called "90DaysOfDevOps" and we have been running a while and now it is time to expand the team from 1 person to lots more over the coming weeks, I am the only one so far that knows the onboarding process so we want to reduce that bottleneck by automating some of these tasks.
+
+Requirements:
+
+1. A user can be passed in as a command line argument.
+2. A user is created with the name of the command line argument.
+3. A password can be parsed as a command line argument.
+The password is set for the user
+4. A message of successful account creation is displayed.
+
+Let's start with creating our shell script with:
+
+`touch create_user.sh`
+
+Make the file executable using:
+
+`chmod +x create_user.sh`
+
+We will then run:
+
+`nano create_user.sh` to start editing our script for the scenario we have been set.
+### First requirement
+
+"A user can be passed in as a command line argument"  To carry out this task we would do the following:
+
+```
+#! /usr/bin/bash
+
+#A user can be passed in as a command line argument
+echo "$1"
+
+```
+![command-line](./images/nano-%241.png)
+
+Now run: 
+`./create_user.sh Jobina`
+
+![creat](./images/create_user-%20commands.png)
+
+### Second requirement:
+"A user is created with the name of command line argument" this can be done with the useradd command. The -m option is to create the user home directory as /home/username.
+
+```
+#! /usr/bin/bash
+
+#A user can be passed in as a command line argument
+echo "$1 user account being created."
+
+#A user is created with the name of the command line argument
+sudo useradd -m "$1"
+
+```
+Kindly note that this will return an error if  a user account name is not filled to variable `$1`
+
+To check if the account was 
+
+
