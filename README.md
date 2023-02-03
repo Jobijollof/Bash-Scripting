@@ -200,7 +200,7 @@ echo "$1"
 Now run: 
 `./create_user.sh Jobina`
 
-![creat](./images/create_user-%20commands.png)
+![create](./images/create_user-%20commands.png)
 
 ### Second requirement:
 "A user is created with the name of command line argument" this can be done with the useradd command. The -m option is to create the user home directory as /home/username.
@@ -217,6 +217,74 @@ sudo useradd -m "$1"
 ```
 Kindly note that this will return an error if  a user account name is not filled to variable `$1`
 
-To check if the account was 
+To check if the account was created run:
+
+`awk -F: '{ print $1}' /etc/passwd`
+
+![user](./images/grep.png)
+
+### Third requirement: 
+"A password can be parsed as a command line argument." F
+
+kindly note that this is not standard practice and will not happen in production. We are however doing this  for us to work through the list of requirements in the lab for better understanding.
+
+```
+#! /usr/bin/bash
+
+#A user can be passed in as a command line argument
+echo "$1 user account being created."
+
+#A user is created with the name of the command line argument
+sudo useradd -m "$1"
+
+#A password can be parsed as a command line argument.
+sudo chpasswd <<< "$1":"$2"
+
+```
+
+![pass](./images/chpsswd.png)
+
+When we execute the script with:
+
+`./create_user.sh 90DaysOfDevOps password`
+A password is created in this case `pasword`
+
+When you run `su - 90DaysOfDevOps` input our password it automatically jumped into the user created. To confirm that our user is the current user, we run the `whoami` code. See below for illustration.
+
+![whoami](./images/whoami.png)
+
+### Fourth Requirement:
+The final requirement is "A message of successful account creation is displayed." 
+
+```
+#! /usr/bin/bash
+
+echo "What is your intended username?"
+read  username
+echo "What is your password"
+read  password
+
+#A user can be passed in as a command line argument
+echo "$username user account being created."
+
+#A user is created with the name of the command line argument
+sudo useradd -m $username
+
+#A password can be parsed as a command line argument.
+sudo chpasswd <<< $username:$password
+
+#A message of successful account creation is displayed.
+
+echo "The account for $username has successfully been created"
+
+```
+
+![final](./images/onboard.png)
+
+
+
+
+
+
 
 
