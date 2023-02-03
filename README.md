@@ -160,8 +160,16 @@ fi
 
 ![file1](./images/is-a-file.png)
 
+### Monitoring Scripts
+
+The use of the question mark variable will be discussed here:
+If a command runs successfully, the exit code is 0. If it doesn't the exit code will be none zero. Zero means true and none zero means false.
+
+![true](./images/exit-code.png)
+
 
 ### Command Line Arguments
+In Bash scripts, command line arguments, `$0` is always the name of the script. Other variables span from numbers `$1` to `$9`.
 Example
 Scenario: We have our company called "90DaysOfDevOps" and we have been running a while and now it is time to expand the team from 1 person to lots more over the coming weeks, I am the only one so far that knows the onboarding process so we want to reduce that bottleneck by automating some of these tasks.
 
@@ -280,6 +288,8 @@ echo "The account for $username has successfully been created"
 ```
 
 ![final](./images/onboard.png)
+
+
 
 
 
