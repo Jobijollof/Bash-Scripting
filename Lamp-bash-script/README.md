@@ -75,6 +75,8 @@ echo "LAMP stack setup completed!"
 
 ```
 
+
+
 - grant the file permission and run
 
 `chmod u+x lamp_setup.sh`
