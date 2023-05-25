@@ -15,6 +15,8 @@ sudo nano lamp_setup.sh
 - Add the following  script into the file
 
 
+```
+
 #!/bin/bash
 
 # Update system packages
@@ -65,12 +67,13 @@ apache2 -v
 # Display MySQL version
 mysql --version
 
-# Test PHP setup
+#Test PHP setup
 echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php
 
 # Display completion message
 echo "LAMP stack setup completed!"
 
+```
 
 - grant the file permission and run
 
@@ -81,7 +84,7 @@ echo "LAMP stack setup completed!"
 `sudo ./lamp_setup.sh`
 
 
-# Run mysql_secure_installation script
+- Run mysql_secure_installation script:
 
 This part of the code is going to prompt you for some configurations
 
@@ -108,9 +111,9 @@ This prompt asks if you want to remove the test database and revoke access to it
 This prompt asks if you want to reload the privilege tables to apply the changes made during the configuration process. Press "Enter" to proceed with reloading the privilege tables or choose "n" if you prefer to do it later manually.
 The purpose of the mysql_secure_installation script is to help you secure your MySQL installation by addressing common security concerns. It guides you through the process of setting a root password, removing unnecessary accounts and databases, and disabling remote root login.
 
-[root](./images/completed.png)
+![root](./images/completed.png)
 
 
 - Check for mysql and php installation
 
-[end](./images/version.png)
+![end](./images/version.png)
