@@ -119,6 +119,9 @@ The purpose of the mysql_secure_installation script is to help you secure your M
 
 ![root](./images/completed.png)
 
+- To confirm installation use the Public Ip of webserver:80
+
+![apache](./images/apache.png)
 
 - Check for mysql and php installation
 
