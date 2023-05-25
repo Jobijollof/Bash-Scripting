@@ -1,8 +1,11 @@
-- Implement a Lampstack on AWS with bash script
 
-- Provision EC2 instance
+# Implement a Lampstack on AWS with bash script
 
-- Open port 80 and  22
+## Steps:
+
+- Provision an EC2 instance on AWS
+
+- Open port 80 and  22 in security group inbound rules
 
 - In the root directory create a file and name it lamp_setup.sh
 
@@ -12,6 +15,7 @@ touch lamp_setup.sh
 sudo nano lamp_setup.sh
 
 ```
+
 - Add the following  script into the file
 
 
