@@ -1,5 +1,5 @@
 
-# Implement a Lampstack on AWS with bash script
+# Automate the Implementation of  a Lampstack on AWS with bash script
 
 ## Steps:
 
@@ -18,6 +18,115 @@ sudo nano lamp_setup.sh
 
 - Add the following  script into the file
 
+```
+
+#!/bin/bash
+
+# Update system packages
+sudo apt update
+sudo apt upgrade -y
+
+# Install Apache
+sudo apt install apache2 -y
+
+# Start and enable Apache service
+sudo systemctl start apache2
+sudo systemctl enable apache2
+
+# Install MySQL Server
+sudo apt install mysql-server -y
+
+# Start and enable MySQL service
+sudo systemctl start mysql
+sudo systemctl enable mysql
+
+# Secure MySQL installation
+SECURE_MYSQL=$(expect -c "
+set timeout 10
+spawn sudo mysql_secure_installation
+sleep 1
+expect \"Enter password for user root:\"
+send \"jollof1\n\"
+expect \"Change the password for root ?\"
+send \"n\n\"
+expect \"Remove anonymous users?\"
+send \"Y\n\"
+expect \"Disallow root login remotely?\"
+send \"Y\n\"
+expect \"Remove test database and access to it?\"
+send \"Y\n\"
+expect \"Reload privilege tables now?\"
+send \"Y\n\"
+expect eof
+")
+
+# Display completion message
+echo "MySQL server secured!"
+
+# Install PHP and required modules
+sudo apt install php libapache2-mod-php php-mysql -y
+
+# Restart Apache to load PHP module
+sudo systemctl restart apache2
+
+# Display PHP version
+php -v
+
+# Display Apache version
+apache2 -v
+
+# Display MySQL version
+mysql --version
+
+# Test PHP setup
+echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php
+
+# Display completion message
+echo "LAMP stack setup completed!"
+
+```
+
+![str](./images/mysql-secured.png)
+
+
+- The SECURE_MYSQL=$(expect -c " line of code runs themysql_secure_installationscript and stores the output in theSECURE_MYSQLvariable. Themysql_secure_installation` script will secure the MySQL installation by setting a password for the root user, removing anonymous users, disallowing root login remotely, and removing the test database.
+
+- The set timeout 10 line sets the timeout for the expect command to 10 seconds. This means that if the expect command does not receive a response within 10 seconds, it will exit.
+
+- The spawn sudo mysql_secure_installation line starts the mysql_secure_installation script as the root user.
+
+- The sleep 1 line pauses the script for 1 second. This is done to give the mysql_secure_installation script time to start.
+
+- The `expect "Enter password for user root:" line expects the user to enter the password for the root user.
+
+- The send \"jollof1\n\" line sends the password "jollof1" to the mysql_secure_installation script.
+
+- The `expect "Change the password for root ?"``` line expects the user to answer "no" to the question "Change the password for root?".
+
+- The send \"n\n\" line sends the answer "no" to the mysql_secure_installation script.
+
+- The `expect "Remove anonymous users?"``` line expects the user to answer "yes" to the question "Remove anonymous users?".
+
+- The send \"Y\n\" line sends the answer "yes" to the mysql_secure_installation script.
+
+- The `expect "Disallow root login remotely?"``` line expects the user to answer "yes" to the question "Disallow root login remotely?".
+
+- The send \"Y\n\" line sends the answer "yes" to the mysql_secure_installation script.
+
+- The `expect "Remove test database and access to it?"``` line expects the user to answer "yes" to the question "Remove test database and access to it?".
+
+- The send \"Y\n\" line sends the answer "yes" to the mysql_secure_installation script.
+
+- The `expect "Reload privilege tables now?" line expects the user to answer "yes" to the question "Reload privilege tables now?".
+
+- The send \"Y\n\" line sends the answer "yes" to the mysql_secure_installation script.
+
+- The expect eof line expects the mysql_secure_installation script to exit.
+
+Once the mysql_secure_installation script has exited, the value of the SECURE_MYSQL variable will be set to the output of the script. The output of the script will contain the new password for the root user, and the status of the other security changes that were made.
+
+
+- This method also sets up a Lamp stack, but there are still some manual operations at the `Mysql_secure_installation`
 
 ```
 
