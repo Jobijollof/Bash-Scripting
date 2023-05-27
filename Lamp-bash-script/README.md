@@ -89,15 +89,15 @@ echo "LAMP stack setup completed!"
 ![str](./images/mysql-secured.png)
 
 
-- The SECURE_MYSQL=$(expect -c " line of code runs themysql_secure_installationscript and stores the output in theSECURE_MYSQLvariable. Themysql_secure_installation` script will secure the MySQL installation by setting a password for the root user, removing anonymous users, disallowing root login remotely, and removing the test database.
+- `The SECURE_MYSQL=$(expect -c "` line of code runs the mysql_secure_installation script and stores the output in the SECURE_MYSQLvariable. The `mysql_secure_installation` script will secure the MySQL installation by setting a password for the root user, removing anonymous users, disallowing root login remotely, and removing the test database.
 
-- The set timeout 10 line sets the timeout for the expect command to 10 seconds. This means that if the expect command does not receive a response within 10 seconds, it will exit.
+- The `set timeout 10` line sets the timeout for the expect command to 10 seconds. This means that if the expect command does not receive a response within 10 seconds, it will exit.
 
-- The spawn sudo mysql_secure_installation line starts the mysql_secure_installation script as the root user.
+- The `spawn sudo mysql_secure_installation` line starts the mysql_secure_installation script as the root user.
 
-- The sleep 1 line pauses the script for 1 second. This is done to give the mysql_secure_installation script time to start.
+- `The sleep 1` line pauses the script for 1 second. This is done to give the `mysql_secure_installation` script time to start.
 
-- The `expect "Enter password for user root:" line expects the user to enter the password for the root user.
+- The `expect "Enter password for user root:"` line expects the user to enter the password for the root user.
 
 - The send \"jollof1\n\" line sends the password "jollof1" to the mysql_secure_installation script.
 
