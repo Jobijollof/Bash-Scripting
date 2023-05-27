@@ -99,31 +99,31 @@ echo "LAMP stack setup completed!"
 
 - The `expect "Enter password for user root:"` line expects the user to enter the password for the root user.
 
-- The send \"jollof1\n\" line sends the password "jollof1" to the mysql_secure_installation script.
+- The send `\"jollof1\n\"` line sends the password `"jollof1"` to the `mysql_secure_installation` script.
 
-- The `expect "Change the password for root ?"``` line expects the user to answer "no" to the question "Change the password for root?".
+- The `expect "Change the password for root ?"`  line expects the user to answer "no" to the question "Change the password for root?".
 
-- The send \"n\n\" line sends the answer "no" to the mysql_secure_installation script.
+- The send `\"n\n\"` line sends the answer `"no"` to `the mysql_secure_installation` script.
 
-- The `expect "Remove anonymous users?"``` line expects the user to answer "yes" to the question "Remove anonymous users?".
+- The `expect "Remove anonymous users?"` line expects the user to answer `"yes"` to the question `"Remove anonymous users?".`
 
-- The send \"Y\n\" line sends the answer "yes" to the mysql_secure_installation script.
+- The send `\"Y\n\"` line sends the answer `"yes"` to the `mysql_secure_installation` script.
 
-- The `expect "Disallow root login remotely?"``` line expects the user to answer "yes" to the question "Disallow root login remotely?".
+- The `expect "Disallow root login remotely?"`  line expects the user to answer `"yes"` to the question `"Disallow root login remotely?".`
 
-- The send \"Y\n\" line sends the answer "yes" to the mysql_secure_installation script.
+- The send `\"Y\n\"` line sends the answer `"yes"` to the `mysql_secure_installation` script.
 
-- The `expect "Remove test database and access to it?"``` line expects the user to answer "yes" to the question "Remove test database and access to it?".
+- The `expect "Remove test database and access to it?"` line expects the user to answer `"yes"` to the question "Remove test database and access to it?".
 
-- The send \"Y\n\" line sends the answer "yes" to the mysql_secure_installation script.
+- The send `\"Y\n\"` line sends the answer `"yes"` to the `mysql_secure_installation script.`
 
-- The `expect "Reload privilege tables now?" line expects the user to answer "yes" to the question "Reload privilege tables now?".
+- The `expect "Reload privilege tables now?"`  line expects the user to answer `"yes"` to the question `"Reload privilege tables now?"`.
 
-- The send \"Y\n\" line sends the answer "yes" to the mysql_secure_installation script.
+- The send `\"Y\n\"` line sends the answer `"yes"` to the `mysql_secure_installation` script.
 
-- The expect eof line expects the mysql_secure_installation script to exit.
+- The expect `eof` line expects the `mysql_secure_installation` script to exit.
 
-Once the mysql_secure_installation script has exited, the value of the SECURE_MYSQL variable will be set to the output of the script. The output of the script will contain the new password for the root user, and the status of the other security changes that were made.
+Once the `mysql_secure_installation` script has exited, the value of the SECURE_MYSQL variable will be set to the output of the script. The output of the script will contain the new password for the root user, and the status of the other security changes that were made.
 
 
 - This method also sets up a Lamp stack, but there are still some manual operations at the `Mysql_secure_installation`
