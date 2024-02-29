@@ -4,12 +4,41 @@ Bash scripting:
 Tip for scripting: Most script failures are mostly occasioned by typographical mistakes. Which are either punctuation or spelling errors.
 System  Administrators  working on linux servers where doing repetitive robotic tasks. In order to make work easier and less monotonous and also reduce human error
 these task or commands where now written in a text file and the system executes the file.  The text file that the system executes is called a Bash script.  Script is a text file, containing bash commands. Please note that bash is for the bash shell and  scripting for or in the bash shell is called bash scripting. 
+## Shell
+A shell is a command-line interface (CLI) that provides a user interface for interacting with an operating system or executing commands. It acts as an intermediary between the user and the operating system kernel, allowing users to enter commands and receive responses. Shells can be text-based or graphical, but the text-based shells are more common in Unix-like operating systems, including Linux.
+
+## Key characteristics of a shell include:
+
+- Command Interpretation:
+
+A shell interprets the commands entered by the user and translates them into system calls or actions that the operating system can perform.
+
+- Scripting:
+Shells support scripting, allowing users to write sequences of commands in a script file, which can be executed as a program. This is a powerful feature for automation and creating custom workflows.
+
+- Command Execution:
+The shell is responsible for executing commands and managing their input and output. It also handles the execution of external programs and processes.
+
+- Job Control:
+Shells often provide job control features, allowing users to manage multiple processes, run commands in the background, or bring them to the foreground.
+
+- Environment Variables:
+Shells manage environment variables, which are dynamic values that can affect the behavior of commands and programs.
+
+- Customization:
+Users can customize their shell environment by configuring various settings, defining aliases, and creating scripts to enhance their command-line experience.
+Interactive and Non-Interactive Modes:
+
+Shells can operate in interactive mode, where they wait for user input and provide a prompt, or in non-interactive mode, where they execute commands from a script without user interaction.
+
+
 ### Types of shell in Linux 
-- The Bourne Shell(sh)
-- The  Bourne-again-shell(bash)
-- The C shell
-- The korn shell (ksh)
-- The Z shell(zsh) [types of Linux shell](https://www.digitalocean.com/community/tutorials/different-types-of-shells-in-linux)
+- The Bourne Shell(sh) - The original Unix shell.
+- The  Bourne-again-shell(bash) -The default shell on many Linux distributions
+- The C shell - Designed to resemble the C programming language.
+- The korn shell (ksh) An extension of the Bourne Shell with additional features.
+- The Z shell(zsh) - A shell with advanced features and enhanced scripting capabilities. [types of Linux shell](https://www.digitalocean.com/community/tutorials/different-types-of-shells-in-linux)
+- The choice of shell often depends on user preference, system requirements, and specific use cases. Different shells offer different features, syntax, and scripting capabilities.
 
 ### Creating Shell Scripts
 - Connect to you server. (AWS Ec2)
