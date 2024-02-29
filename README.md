@@ -258,6 +258,8 @@ To check if the account was created run:
 
 `awk -F: '{ print $1}' /etc/passwd`
 
+The awk command you provided is used to extract information from the /etc/passwd file, which typically contains user account information on Unix-like systems. 
+
 ![user](./images/grep.png)
 
 ### Third requirement: 
