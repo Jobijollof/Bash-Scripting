@@ -8,6 +8,7 @@ Terminal is the enviroment where we run or issue bash commands
 
 ## Shell
 A shell is a command-line interface (CLI) that provides a user interface for interacting with an operating system or executing commands. It acts as an intermediary between the user and the operating system kernel, allowing users to enter commands and receive responses. Shells can be text-based or graphical, but the text-based shells are more common in Unix-like operating systems, including Linux.
+This means that the shell interprets commands ran on the terminal.
 
 ## Key characteristics of a shell include:
 
