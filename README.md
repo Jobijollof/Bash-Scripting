@@ -1,9 +1,11 @@
 # Bash-Scripting
  Studying and documenting the fundamentals of Bash scripting 
 Bash scripting:
-Tip for scripting: Most script failures are mostly occasioned by typographical mistakes. Which are either punctuation or spelling errors.
-System  Administrators  working on linux servers where doing repetitive robotic tasks. In order to make work easier and less monotonous and also reduce human error
-these task or commands where now written in a text file and the system executes the file.  The text file that the system executes is called a Bash script.  Script is a text file, containing bash commands. Please note that bash is for the bash shell and  scripting for or in the bash shell is called bash scripting. 
+Tip for scripting: Most script failures are mostly occasioned by typographical mistakes. Which are either punctuation or spelling errors by system  Administrators  working on linux servers while doing repetitive robotic tasks. In order to make work easier and less monotonous and also reduce human error these task or commands where now written in a text file and the system executes the file.  The text file that the system executes is called a Bash script. Bash Script is a text file, containing bash commands. Please note that bash is for the bash shell and  scripting for or in the bash shell is called bash scripting.
+
+## Terminal
+Terminal is where we run bash commands
+
 ## Shell
 A shell is a command-line interface (CLI) that provides a user interface for interacting with an operating system or executing commands. It acts as an intermediary between the user and the operating system kernel, allowing users to enter commands and receive responses. Shells can be text-based or graphical, but the text-based shells are more common in Unix-like operating systems, including Linux.
 
